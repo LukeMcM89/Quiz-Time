@@ -23,10 +23,11 @@ body {
 
 header {
     text-align: center;
-    padding; 20px;
+    padding: 20px;
     padding-top: 0px;
-    color: black;
+    color:rgb(35, 121, 197)
 }
+
 
 .card {
     background-color: burlywood;
