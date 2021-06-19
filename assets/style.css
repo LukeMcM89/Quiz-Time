@@ -28,13 +28,16 @@ header {
     color:rgb(35, 121, 197)
 }
 
+h2 {
+    text-align: center;
+}
 
 .card {
     background-color: burlywood;
     border-radius: 5px;
     border-width: 1px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-    color: darkcyan;
+    color: black;
     font-size: 18px;
     margin: 0 auto;
     max-width: 800px;
