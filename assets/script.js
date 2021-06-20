@@ -1,6 +1,6 @@
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
-const submitButton = document.get ElementById('submit');
+const submitButton = document.getElementById('submit');
 
 const myQuestions = [
     {
@@ -78,14 +78,39 @@ function buildQuiz() {
             );
         }
     );
+            quizContainer.innerHTML = output.join('');
 
         }
 
     )
 }
 
-function showResults() {}
+function showResults() {
 
-buildQuiz;
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    let numCorrect = 0;
+
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+        const answerContainer = answerContainers[questionNumber];
+        const selector = 'input[name=question${questionNumber}]:checked';
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        if(userAnswer === currentQuestion.correctAnswer){
+
+            numCorrect++;
+
+            answerContainers[questionNumber].style.color = 'lightblue';
+
+            else{
+                answerContainers[questionNumber].style.color = 'red';
+            }
+        });
+
+        resultsContainer.innerHTML = '${numCorrect} out of ${myQuestions.length}';
+}
+
+buildQuiz();
 
 submitButton.addEventListener('click', showResults);
