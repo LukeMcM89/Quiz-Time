@@ -38,7 +38,7 @@ function showResults() {
 
         const answerContainer = answerContainers[questionNumber];
         const selector = `input[name=question${questionNumber}]:checked`;
-        const userAnswer = (answerContainer.querySelector(selector)|| {}).value;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
         if(userAnswer === currentQuestion.correctAnswer){
 
@@ -66,7 +66,7 @@ function showSlide(n) {
     if(currentSlide === 0) {
         previousButton.style.display = 'none';
     }
-}
+
     else {
         previousButton.style.display = 'inline-block';
     }
@@ -99,9 +99,9 @@ const myQuestions = [
     {
         question: "During which period of the Mesozoic Era did the Tyrannosaurus rex live?",
         answers: {
-            a: "Cretaceous"
-            b: "Jurassic"
-            c: "Triassic"
+            a: "Cretaceous",
+            b: "Jurassic",
+            c: "Triassic",
             d: "None of the Above"
         },
         correctAnswer: "a"
@@ -109,9 +109,9 @@ const myQuestions = [
     {
         question: "More than a hundred years ago, a paleontologist from the American Museum of Natural History discovered the first fossils of <em>Tyrannosaurus rex<em>. Who found the fossils and where?",
             answers: {
-                a: "Luke McMurtrie in Richmond, Virginia"
-                b: "Barnum Brown in Hell Creek, Montana, U.S.A."
-                c: "Dr. Ian Malcolm along the coast of the Osa Peninsula, Costa Rica"
+                a: "Luke McMurtrie in Richmond, Virginia",
+                b: "Barnum Brown in Hell Creek, Montana, U.S.A.",
+                c: "Dr. Ian Malcolm along the coast of the Osa Peninsula, Costa Rica",
                 d: "Dr. John Hammond in the Gobi Desert, Northern China"
             },
             correctAnswer: "b" 
@@ -119,9 +119,9 @@ const myQuestions = [
     {
         question: "T.Rex grew much bigger and much faster than humans. How many pounds (kilograms) do scientists maintain they gained per DAY?",
             answers: {
-                a: "1 pound (0.5 kilograms)"
-                b: "4.6 pounds (2.1 kilograms"
-                c: "2 pounds (1 kilogram)"
+                a: "1 pound (0.5 kilograms)",
+                b: "4.6 pounds (2.1 kilograms",
+                c: "2 pounds (1 kilogram)",
                 d: "13 pounds (5.9 kilograms)"
             },
             correctAnswer: "b"
@@ -129,9 +129,9 @@ const myQuestions = [
     {
         question: "What color do paleontologists, scientists and scholars believe the Tyrannosaurus rex was?",
             answers: {
-                a: "We don't know"
-                b: "Greyish-Blue"
-                c: "Blood-Red"
+                a: "We don't know",
+                b: "Greyish-Blue",
+                c: "Blood-Red",
                 d: "Brown"
             },
             correctAnswer: "a"
@@ -139,9 +139,9 @@ const myQuestions = [
     {
         question: "At a goliath 40 feet long and 13 feet tall at the hip, Sue, the largest Tyrannosaurus rex specimen ever discovered, is currently on display at which museum?",
             answers: {
-                a: "Black Hills Institue of Geological Research"
-                b: "California Museum of Natural History"
-                c: "The Vatican Museum"
+                a: "Black Hills Institue of Geological Research",
+                b: "California Museum of Natural History",
+                c: "The Vatican Museum",
                 d: "Field Museum of Natural History in Chicago"
             },
             correctAnswer: "d"
