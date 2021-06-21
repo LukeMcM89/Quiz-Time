@@ -10,26 +10,77 @@ function buildQuiz() {
 
             for(letter in currentQuestion.answers){
                 answers.push(
-                    <label>
+                    `<label>
                         <input type="radio" name="question${questionNumber}" value="${letter}">
                         ${letter} :
+
                         ${currentQuestion.answer[letter]}
-                        </label>
+                        </label>`
                 );   
             }
 
             output.push(
-                <div class="question"> ${currentQuestion.question}</div>
-                <div class="answers"> ${answers.join('')}</div>
+                `<div class="question"> ${currentQuestion.question} </div>
+                <div class="answers"> ${answers.join('')} </div>`
             );
         }
     );
             quizContainer.innerHTML = output.join('');
 }
 
+function showResults() {
 
+    const answerContainers = quizContainer.querySelectorAll('.answers');
 
+    let numCorrect = 0;
 
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector)|| {}).value;
+
+        if(userAnswer === currentQuestion.correctAnswer){
+
+            numCorrect++;
+
+            answerContainers[questionNumber].style.color = 'lightblue';
+        }
+
+            else{
+                answerContainers[questionNumber].style.color = 'red';
+            }
+        });
+
+        resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+}
+
+function showSlide(n) {
+
+    slides[currentSlide].classlist.remove('active-slide');
+
+    slides[n].classList.add('active-slide');
+
+    currentSlide = n;
+    
+    if(currentSlide === 0) {
+        previousButton.style.display = 'none';
+    }
+}
+    else {
+        previousButton.style.display = 'inline-block';
+    }
+
+    if(currentSlide === slides.length-1) {
+        nextButton.style.display = 'none';
+        submitButton.style.display = 'inline-block';
+    }
+
+    else {
+        nextButton.style.display = 'inline-block';
+        submitButton.style.display = 'none';
+    }
+}
 
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -77,7 +128,7 @@ const myQuestions = [
             correctAnswer: "a"
     },
     {
-        question: "At a goliath 40 feet long and 13 feet tall at the hip, Sue, the largest Tyrannosaurus rex specimen ever discovered, is currently on display at which museum?"
+        question: "At a goliath 40 feet long and 13 feet tall at the hip, Sue, the largest Tyrannosaurus rex specimen ever discovered, is currently on display at which museum?",
             answers: {
                 a: "Black Hills Institue of Geological Research"
                 b: "California Museum of Natural History"
@@ -87,36 +138,6 @@ const myQuestions = [
             correctAnswer: "d"
     }
 ];
-
-
-function showResults() {
-
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-
-    let numCorrect = 0;
-
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-        const answerContainer = answerContainers[questionNumber];
-        const selector = 'input[name=question${questionNumber}]:checked';
-        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-        if(userAnswer === currentQuestion.correctAnswer){
-
-            numCorrect++;
-
-            answerContainers[questionNumber].style.color = 'lightblue';
-        }
-
-            else{
-                answerContainers[questionNumber].style.color = 'red';
-            }
-        });
-
-        resultsContainer.innerHTML = '${numCorrect} out of ${myQuestions.length}';
-}
-
-
 
 buildQuiz();
 
