@@ -155,4 +155,11 @@ const nextButton = document.getElementById("next");
 const slides = document.querySelectorAll("slide");
 let currentSlide = 0;
 
+showSlide(currentSlide);
+
 submitButton.addEventListener('click', showResults);
+
+previousButton.addEventListener("click", showPreviousSlide);
+
+nextButton.addEventListener("click", showNextSlide);
+})();
