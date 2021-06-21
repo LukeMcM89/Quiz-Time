@@ -82,6 +82,15 @@ function showSlide(n) {
     }
 }
 
+function showNextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+}
+
+
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
@@ -140,5 +149,10 @@ const myQuestions = [
 ];
 
 buildQuiz();
+
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll("slide");
+let currentSlide = 0;
 
 submitButton.addEventListener('click', showResults);
