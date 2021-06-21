@@ -1,8 +1,36 @@
-*,
-*::before
-*::after {
-    box-sizing: border-box;
+@import
+url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+body {
+    font-size: 20px;
+    font-family:'Work Sans', sans-serif;
+    color: black;
+    font-weight: 300;
+    text-align: center;
+    background-color: burlywood;
 }
+
+h1 {
+    font-weight: 300;
+    margin: 0px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: black;
+    color: #fff;
+}
+
+.question {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.answers {
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+
 
 html, body, .wrapper {
     height: 100%;
@@ -10,10 +38,7 @@ html, body, .wrapper {
     padding: 0;
 }
 
-body {
-    font-family: sans-serif;
-    background-color: bisque;
-}
+
 
 .wrapper {
     padding-top: 30px;
