@@ -13,6 +13,28 @@ function startGame() {
   startTimer()
 }
 
+function winGame() {
+  wordBlank.textContent = "YOU WON!!!🏆 ";
+  winCounter++
+  startButton.disabled = false;
+  setWins()
+}
+
+
+function loseGame() {
+  wordBlank.textContent = "GAME OVER";
+  loseCounter++
+  startButton.disabled = false;
+  setLosses()
+}
+
+
+function init() {
+  getWins();
+  getlosses();
+}
+
+//init();
 
 function startTimer() {
 
@@ -204,6 +226,7 @@ function startTimer() {
   ];
 
   createQuiz();
+
 
   const previousButton = document.getElementById("previous");
   const nextButton = document.getElementById("next");
