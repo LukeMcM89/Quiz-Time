@@ -1,3 +1,11 @@
+var timer = 0;
+var score = 0;
+
+function startGame() {
+  isWin = false;
+  timerCount = 10;
+}
+
 (function(){
  
   function createQuiz(){
