@@ -60,7 +60,7 @@
         numCorrect++;
 
         // color the answers blue
-        answerContainers[questionNumber].style.color = 'blue';
+        answerContainers[questionNumber].style.color = "green";
       }
       // if answer is wrong or blank
       else{
