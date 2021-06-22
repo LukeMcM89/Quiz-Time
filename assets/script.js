@@ -1,5 +1,6 @@
 var timer = 0;
 var score = 0;
+var timerCount;
 
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
@@ -14,7 +15,7 @@ function startGame() {
 }
 
 function winGame() {
-  wordBlank.textContent = "YOU WON!!!🏆 ";
+  wordBlank.textContent = "Nice";
   winCounter++
   startButton.disabled = false;
   setWins()
@@ -169,7 +170,7 @@ function startTimer() {
         a: "Luke McMurtrie in Richmond, Virginia",
         b: "Barnum Brown in Hell Creek, Montana, U.S.A",
         c: "Dr. Ian Malcolm along the coast of the Osa Peninsula, Costa Rica",
-        d: "Dr. John Hammon in the Gobi Desert, Northern China"
+        d: "Dr. John Hammond in the Gobi Desert, Northern China"
       },
       correctAnswer: "b"
     },
