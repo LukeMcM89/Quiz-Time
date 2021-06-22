@@ -1,6 +1,10 @@
 var timer = 0;
 var score = 0;
 
+var timerElement = document.querySelector(".timer-count");
+var startButton = document.querySelector(".start-button");
+
+
 function startGame() {
   isWin = false;
   timerCount = 10;
@@ -8,6 +12,8 @@ function startGame() {
   renderBlanks()
   startTimer()
 }
+
+
 function startTimer() {
 
   timer = setInterval(function() {
@@ -209,4 +215,6 @@ function startTimer() {
   submitButton.addEventListener('click', showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
+  startButton.addEventListener("click", startGame);
+
 })();
