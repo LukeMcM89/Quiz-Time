@@ -1,18 +1,24 @@
 var timer = 0;
 var score = 0;
 var timerCount;
+var isWin = false;
+var quizContainer = document.querySelector(".quiz-container");
+var wordBlank = document.querySelector("#lose");
+quizContainer.style.display= "none";
 
 var timerElement = document.querySelector(".timer-count");
-var startButton = document.querySelector(".start-button");
+var startButton = document.querySelector("#startbutton");
 
 
-function startGame() {
+function startGame(){
+console.log("test")
+  quizContainer.style.display="block";
+  startButton.style.display="none";
   isWin = false;
-  timerCount = 10;
-  startButton.disabled = true;
-  renderBlanks()
+  timerCount = 150;
   startTimer()
 }
+
 
 function winGame() {
   wordBlank.textContent = "Nice";
@@ -21,14 +27,12 @@ function winGame() {
   setWins()
 }
 
-
 function loseGame() {
   wordBlank.textContent = "GAME OVER";
   loseCounter++
   startButton.disabled = false;
   setLosses()
 }
-
 
 function init() {
   getWins();
@@ -37,12 +41,16 @@ function init() {
 
 //init();
 
-function startTimer() {
+
+function startTimer(){
+console.log("timer") 
 
   timer = setInterval(function() {
     timerCount--;
     timerElement.textContent = timerCount;
-    if (timerCount >= 0) {
+    
+    if (timerCount <= 0) {
+    console.log("timeout") 
      
       if (isWin && timerCount > 0) {
       
@@ -56,11 +64,12 @@ function startTimer() {
       clearInterval(timer);
       loseGame();
     }
+  
   }, 1000);
 }
 
 (function(){
- 
+ console.log("test");
   function createQuiz(){
 
     const output = [];
@@ -242,3 +251,4 @@ function startTimer() {
   startButton.addEventListener("click", startGame);
 
 })();
+

@@ -45,8 +45,9 @@ button{
 	padding: 25px;
 	cursor: pointer;
 	margin-bottom: 20px;
-    margin-top: 30px;
+  margin-top: 30px;
 }
+
 button:hover{
 	background-color:rgb(196, 50, 50);
 }
@@ -87,3 +88,4 @@ button:hover{
     background-color: #444;
     font-weight: 100;
 }
+
