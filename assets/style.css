@@ -46,10 +46,12 @@ button{
 	cursor: pointer;
 	margin-bottom: 20px;
   margin-top: 30px;
+  border-radius: 10px;
 }
 
 button:hover{
 	background-color:rgb(196, 50, 50);
+  box-shadow: 0 0 1em 0 rgb(15, 161, 15);
 }
 
 .slide{

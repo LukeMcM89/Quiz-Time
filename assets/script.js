@@ -4,10 +4,13 @@ var timerCount;
 var isWin = false;
 var quizContainer = document.querySelector(".quiz-container");
 var wordBlank = document.querySelector("#lose");
-quizContainer.style.display= "none";
+var quiz = document.querySelector("#quiz");
+var next = document.querySelector("#next");
 
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector("#startbutton");
+
+quizContainer.style.display= "none";
 
 
 function startGame(){
@@ -15,7 +18,7 @@ console.log("test")
   quizContainer.style.display="block";
   startButton.style.display="none";
   isWin = false;
-  timerCount = 150;
+  timerCount = 100;
   startTimer()
 }
 
