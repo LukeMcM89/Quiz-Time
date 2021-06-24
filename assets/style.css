@@ -79,6 +79,10 @@ button:hover{
   background-color: #444;
 }
 
+.timer-count {
+  color: red;
+}
+
 .footer {
     position: sticky;
     top: 100%;

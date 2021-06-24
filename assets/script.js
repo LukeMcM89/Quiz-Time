@@ -19,16 +19,15 @@ console.log("test")
   startTimer()
 }
 
-
 function winGame() {
-  wordBlank.textContent = "Nice";
+  wordBlank.textContent = "You win!";
   winCounter++
   startButton.disabled = false;
   setWins()
 }
 
 function loseGame() {
-  wordBlank.textContent = "GAME OVER";
+  wordBlank.textContent = "GAME OVER!";
   loseCounter++
   startButton.disabled = false;
   setLosses()
