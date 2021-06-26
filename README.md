@@ -8,6 +8,8 @@ This quiz is about the Tyrannosaurus Rex, easily one of the most incredible dino
 When the Start button is clicked, a countdown is initiated and the user is presented with a total of 7 questions. 
 When the timer reaches zero, the user is shown text declaring GAME OVER!
 
+When the final question is answered, the time remaining in seconds is the users score. They can input that score, which is subsequently saved in local storage.
+
 Link to deployed website: https://lukemcm89.github.io/Quiz-Time/
 
 Link to repository: https://github.com/LukeMcM89?tab=repositories

@@ -2,6 +2,7 @@ var timer = 0;
 var score = 0;
 var timerCount;
 var isWin = false;
+var incorrectAnswer;
 var quizContainer = document.querySelector(".quiz-container");
 var wordBlank = document.querySelector("#lose");
 var quiz = document.querySelector("#quiz");
@@ -12,13 +13,15 @@ var startButton = document.querySelector("#startbutton");
 
 quizContainer.style.display= "none";
 
+//document.getElementById('next').style.visibility='hidden';
+
 
 function startGame(){
 console.log("test")
   quizContainer.style.display="block";
   startButton.style.display="none";
   isWin = false;
-  timerCount = 100;
+  timerCount = 150;
   startTimer()
 }
 
@@ -66,9 +69,14 @@ console.log("timer")
       clearInterval(timer);
       loseGame();
     }
+
+   // if (incorrectAnswer) {
+    //  timerCount =- 20;
+   // }
   
   }, 1000);
 }
+
 
 (function(){
  console.log("test");
@@ -247,10 +255,28 @@ console.log("timer")
 
   showSlide(currentSlide);
 
-  submitButton.addEventListener('click', showResults);
+  submitButton.addEventListener("click", showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
   startButton.addEventListener("click", startGame);
 
+  let users = [];
+  const addUser = (ev)=>{
+    ev.preventDefault();
+    let user = {
+      id: Date.now(),
+      name: document.getElementById('name').value,
+      score: document.getElementById('score').value
+    }
+    users.push(user);
+    document.forms[0].reset();
+
+    console.warn('added' , (users) );
+    let pre = document.querySelector('#msg pre');
+    pre.textContent = '\n' + JSON.stringify(users, '\t\, 2');
+
+    localStorage.setItem('MyUserList', JSON.stringify(users) );
+  }
+document.getElementById('scorebtn').addEventListener("click", addUser);
 })();
 
