@@ -19,7 +19,7 @@ console.log("test")
   quizContainer.style.display="block";
   startButton.style.display="none";
   isWin = false;
-  timerCount = 150;
+  timerCount = 80;
   startTimer()
 }
 
@@ -152,6 +152,7 @@ console.log("timer")
     }
     else{
       previousButton.style.display = 'inline-block';
+      nextButton.style.display = "none";
     }
     if(currentSlide === slides.length-1){
       nextButton.style.display = 'none';
@@ -170,7 +171,8 @@ console.log("timer")
   function showPreviousSlide() {
     showSlide(currentSlide - 1);
   }
-  //questions 
+
+  //questions. Need to reroute redudant submit option at end of quiz
 
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
