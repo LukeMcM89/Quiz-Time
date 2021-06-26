@@ -13,8 +13,6 @@ var startButton = document.querySelector("#startbutton");
 
 quizContainer.style.display= "none";
 
-//document.getElementById('next').style.visibility='hidden';
-
 
 function startGame(){
 console.log("test")
@@ -43,8 +41,6 @@ function init() {
   getWins();
   getlosses();
 }
-
-//init();
 
 
 function startTimer(){
@@ -84,6 +80,8 @@ console.log("timer")
 
     const output = [];
 
+    //stores list of all answers possible
+
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
 
@@ -99,6 +97,7 @@ console.log("timer")
             </label>`
           );
         }
+        //adds the question/answer
 
         output.push(
           `<div class="slide">
@@ -108,6 +107,8 @@ console.log("timer")
         );
       }
     );
+
+    //combines the list into a single string of html
 
     quizContainer.innerHTML = output.join('');
   }
@@ -138,6 +139,7 @@ console.log("timer")
       }
     });
 
+    // displays number of answers correct 7 out ot 7 etc
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
@@ -168,6 +170,7 @@ console.log("timer")
   function showPreviousSlide() {
     showSlide(currentSlide - 1);
   }
+  //questions 
 
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
@@ -247,6 +250,7 @@ console.log("timer")
 
   createQuiz();
 
+  // creates a new page per question 
 
   const previousButton = document.getElementById("previous");
   const nextButton = document.getElementById("next");
@@ -260,9 +264,10 @@ console.log("timer")
   nextButton.addEventListener("click", showNextSlide);
   startButton.addEventListener("click", startGame);
 
+  // submit username and score form
   let users = [];
   const addUser = (ev)=>{
-    ev.preventDefault();
+    ev.preventDefault()
     let user = {
       id: Date.now(),
       name: document.getElementById('name').value,
@@ -275,6 +280,7 @@ console.log("timer")
     let pre = document.querySelector('#msg pre');
     pre.textContent = '\n' + JSON.stringify(users, '\t\, 2');
 
+    //saves to local storage
     localStorage.setItem('MyUserList', JSON.stringify(users) );
   }
 document.getElementById('scorebtn').addEventListener("click", addUser);

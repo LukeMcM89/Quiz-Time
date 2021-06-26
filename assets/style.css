@@ -34,7 +34,8 @@ h1{
   display: block;
   margin-bottom: 10px;
 }
-
+/* Added button styling
+*/
 button{
   font-family: 'Work Sans', sans-serif;
 	font-size: 22px;
@@ -49,6 +50,8 @@ button{
   border-radius: 10px;
 }
 
+/* More button styling
+*/
 button:hover{
 	background-color:rgb(196, 50, 50);
   box-shadow: 0 0 1em 0 rgb(15, 161, 15);

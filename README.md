@@ -10,6 +10,8 @@ When the timer reaches zero, the user is shown text declaring GAME OVER!
 
 When the final question is answered, the time remaining in seconds is the users score. They can input that score, which is subsequently saved in local storage.
 
+Thank you for your time!
+
 Link to deployed website: https://lukemcm89.github.io/Quiz-Time/
 
 Link to repository: https://github.com/LukeMcM89?tab=repositories
