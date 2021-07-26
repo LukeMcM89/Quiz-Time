@@ -1,4 +1,3 @@
-
 # Quiz-Time
 
 A multiple choice timed quiz.
@@ -10,6 +9,8 @@ When the timer reaches zero, the user is shown text declaring GAME OVER!
 
 When the final question is answered, the time remaining in seconds is the users score. They can input that score, which is subsequently saved in local storage.
 
+#Technology
+
 Languages used: HTML5, CSS3, Javascript, JSON
 
 Thank you for your time!
@@ -20,6 +21,8 @@ Link to repository: https://github.com/LukeMcM89?tab=repositories
 
 
 <img width="1440" alt="t-rexquiz" src="https://user-images.githubusercontent.com/80003989/123296432-a45b2200-d4e4-11eb-8b8c-90d573f3d9ae.png">
+
+<img width="1436" alt="quiz_screenshot" src="https://user-images.githubusercontent.com/80003989/127021234-a63ce025-4b7e-4d05-a284-cb8aa9a9d073.png">
 
 Copyright <2021> <Luke McMurtrie>
 
